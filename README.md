@@ -1,7 +1,7 @@
 # ⚡️ edRVFL-SC: GPU-Free Deep Learning for Lightning-Fast Predictions ⚡️
 
 **Ensemble Deep Random Vector Functional Link with Skip Connections (edRVFL-SC)**  
-*No GPU required • 100× faster training • Enterprise-scale performance on consumer hardware*
+*No GPU required • 100× faster training*
 
 [![PyPI Version](https://img.shields.io/pypi/v/ed-rvfl-sc.svg)](https://pypi.org/project/ed-rvfl-sc/)
 [![Python Versions](https://img.shields.io/pypi/pyversions/ed-rvfl-sc.svg)](https://pypi.org/project/ed-rvfl-sc/)
