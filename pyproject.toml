@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ed-rvfl-sc"
-version = "0.1.0"
+version = "0.1.1"
 description = "Ensemble Deep Random Vector Functional Link (edRVFL) for regression and classification with Keras compatibility"
 authors = ["L-A-Sandhu <laeeq.aslam.100@gmail.com>"]
 license = "MIT"
