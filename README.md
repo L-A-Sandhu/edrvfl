@@ -18,7 +18,7 @@
 - **Minimal Compute Requirements:** 90% less computation than traditional deep learning
 - **Skip Connection Power:** Enhanced feature reuse for superior accuracy
 
-![edRVFL-SC Architecture](examples/block_diagram.png)  
+![edRVFL-SC Architecture](examples/EDRVFL.png)  
 *Architecture diagram showing skip connections and ensemble prediction*
 
 ## Key Features
@@ -69,31 +69,32 @@ print(f"Parameters: {params:,} | FLOPs: {flops:,}")
 
 ## 📈 Performance Results
 
-![Actual vs Predicted](https://examples/actual_vs_predicted.png)  
+![Actual vs Predicted](examples/actual_vs_predicted.png)  
 *Model predictions vs actual values on California Housing dataset*
 
-![Feature Importance](https://examples/feature_importance.png)  
+![Feature Importance](examples/feature_importance.png)  
 *Feature importance analysis showing key predictive factors*
 
-![Error Distribution](https://examples/error_distribution.png)  
+![Error Distribution](examples/error_distribution.png)  
 *Prediction error distribution centered near zero*
 
 | Metric              | Value                        |
 |--------------------|------------------------------|
 | Training Time      | 3.2 sec (vs 15 min for equivalent DNN) |
-| RMSE               | 0.72 ($72,000 error)         |
-| R² Score           | 0.85                         |
-| FLOPs/Prediction   | 1.2M (fits mobile devices)   |
+| RMSE               | 0.5848        |
+| R² Score           | 0.7390                      |
+| FLOPs/Prediction   | 5,323,388 (fits mobile devices)   |
+
 
 ## Key Hyperparameters
 
 | Parameter       | Description                          | Default | Performance Tip                  |
 |-----------------|--------------------------------------|---------|----------------------------------|
-| `num_units`     | Hidden neurons per layer            | 128     | Increase for complex patterns    |
+| `num_units`     | Hidden neurons per layer            | 512     | Increase for complex patterns    |
 | `activation`    | Nonlinear function (relu, sigmoid, tanh, radbas) | relu | radbas for smooth data         |
-| `lambda_`       | Regularization coefficient          | 0.01    | Higher prevents overfit          |
-| `Lmax`          | Hidden layers                       | 3       | 5-7 layers optimal               |
-| `deep_boosting` | Layer scaling factor                | 1.0     | 0.8-0.95 boosts accuracy         |
+| `lambda_`       | Regularization coefficient          | 0.0001   | Higher prevents overfit          |
+| `Lmax`          | Hidden layers                       | 7       | 5-7 layers optimal               |
+| `deep_boosting` | Layer scaling factor                | 0.5    | 0.8-0.95   |
 
 ## Model Architecture
 
@@ -111,21 +112,7 @@ The edRVFL-SC revolution features:
   - Average predictions from all layers
   - Natural regularization effect
 
-## Diagram
 
-```mermaid
-graph TD
-    A[Input Layer] -->|Bias Augmentation| B[Hidden Layer 1]
-    B -->|Random Weights| C[Activation: relu/sigmoid/tanh/radbas]
-    C -->|Skip Connection| D[Hidden Layer 2]
-    D -->|Random Weights| E[Activation]
-    E -->|Skip Connection| F[Hidden Layer N]
-    F -->|Ensemble| G[Output Layer]
-    A -->|Skip Connection| D
-    A -->|Skip Connection| F
-    C -->|Skip Connection| F
-    G --> H[Final Prediction]
-```
 
 ## Advanced Features
 
