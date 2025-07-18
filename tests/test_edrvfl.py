@@ -1,5 +1,5 @@
 import numpy as np
-from edrvfl_sc import edRVFL_SC
+from ed_rvfl_sc import edRVFL_SC  # Changed import
 
 def test_train_predict():
     np.random.seed(42)

@@ -108,23 +108,6 @@ else:
     beta = np.linalg.inv(D.T @ D + self.lambda_ * np.eye(D.shape[1])) @ D.T @ Y_train
 ```
 
-## Performance Analysis
-
-The `_get_model_size()` method provides detailed computational analysis:
-
-**Layer-wise FLOPs Breakdown:**
-
-| Layer | Input Dim | D Features | W FLOPs | Act FLOPs | Beta FLOPs |
-|-------|-----------|------------|---------|-----------|------------|
-| 0     | 21        | 148        | 5,376   | 128       | 296        |
-| 1     | 149       | 426        | 63,488  | 128       | 852        |
-| 2     | 427       | 810        | 276,736 | 128       | 1,620      |
-
-**Total Calculations:**
-
-- Parameters: 116,556
-- FLOPs: 349,204
-
 ## Documentation
 
 ### Class `edRVFL_SC`
